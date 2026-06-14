@@ -1,0 +1,57 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Passerelles — Cours de français gratuits à Neuf-Brisach',
+  description = 'Association Passerelles : cours de français gratuits et ouverts à tous au Foyer protestant de Neuf-Brisach, depuis 1988.',
+} = Astro.props;
+---
+<!doctype html>
+<!-- translate="yes" + meta permettent aux navigateurs de proposer la traduction automatique -->
+<html lang="fr" translate="yes">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <!-- lang="fr" + translate="yes" → les navigateurs Chrome/Edge/Safari proposent auto la traduction -->
+    <link rel="icon" href="/images/logo.png" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      * { -webkit-tap-highlight-color: transparent; }
+
+      /* Transitions douces globales */
+      a, button { transition-property: color, background-color, border-color, opacity, transform, box-shadow; transition-duration: 150ms; transition-timing-function: cubic-bezier(.4,0,.2,1); }
+
+      /* Focus visible accessible */
+      :focus-visible { outline: 2px solid #d4a843; outline-offset: 3px; border-radius: 4px; }
+
+      /* Animations d'entrée au scroll */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.55s cubic-bezier(.25,.46,.45,.94) forwards;
+      }
+      .fade-up.delay-1 { animation-delay: 0.1s; }
+      .fade-up.delay-2 { animation-delay: 0.2s; }
+      .fade-up.delay-3 { animation-delay: 0.3s; }
+
+      /* Sélection de texte couleur marque */
+      ::selection { background: #d4a84355; color: #1a3a5c; }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-gray-800 antialiased">
+    <slot />
+  </body>
+</html>

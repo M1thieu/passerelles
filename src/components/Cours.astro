@@ -1,0 +1,92 @@
+---
+const niveaux = [
+  {
+    niveau: 'Débutants',
+    emoji: '🌱',
+    desc: "Vous ne parlez pas encore français ? Pas de problème. On commence par les bases : se présenter, compter, comprendre les panneaux, faire ses courses.",
+    exemples: ['Alphabet & phonétique', 'Vocabulaire du quotidien', 'Se présenter, saluer', 'Chiffres & couleurs'],
+  },
+  {
+    niveau: 'Intermédiaires',
+    emoji: '📖',
+    desc: "Vous comprenez mais hésitez encore ? On travaille la fluidité à l'oral, la grammaire et la vie pratique en France.",
+    exemples: ['Conjugaison & grammaire', 'Démarches administratives', 'Santé, école, travail', 'Compréhension écrite'],
+  },
+  {
+    niveau: 'Avancés',
+    emoji: '🎓',
+    desc: "Vous parlez bien mais souhaitez progresser encore ? On affine, on nuance, on prépare des examens ou des entretiens.",
+    exemples: ['Expression écrite', 'Culture & histoire française', 'Préparation OQLF/DELF', 'Débats & actualité'],
+  },
+];
+
+const atouts = [
+  { icon: '🤸', txt: 'Enseignement individualisé selon votre niveau' },
+  { icon: '💬', txt: 'Priorité à l\'oral et à la communication' },
+  { icon: '📋', txt: 'Aide aux démarches du quotidien' },
+  { icon: '🌐', txt: 'Échanges interculturels enrichissants' },
+  { icon: '📅', txt: 'Commencer à n\'importe quel moment de l\'année' },
+  { icon: '🆓', txt: '100 % gratuit, sans inscription préalable' },
+];
+---
+<section id="cours" class="py-24 px-6 bg-stone-50 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+       style="background-image: radial-gradient(circle, #1a3a5c 1.5px, transparent 1.5px); background-size: 28px 28px;">
+  </div>
+
+  <div class="relative max-w-6xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="text-brand-gold font-semibold uppercase tracking-widest text-xs mb-3">Programme</p>
+      <h2 class="font-display text-3xl md:text-4xl text-brand-blue font-bold mb-4">Les cours Passerelles</h2>
+      <p class="text-gray-500 text-sm max-w-lg mx-auto leading-relaxed">
+        Trois niveaux, une même salle, une même bienveillance. Les formatrices et formateurs
+        s'adaptent à chaque apprenant, à son rythme, à ses besoins.
+      </p>
+    </div>
+
+    <!-- Niveaux -->
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {niveaux.map(({ niveau, emoji, desc, exemples }, i) => (
+        <div class={`rounded-3xl p-7 flex flex-col gap-5 border ${i === 1 ? 'bg-brand-blue text-white border-brand-blue' : 'bg-white border-stone-200'}`}>
+          <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 ${i === 1 ? 'bg-white/15' : 'bg-brand-blue/5'}`}>
+            {emoji}
+          </div>
+          <div>
+            <p class={`text-xs font-semibold uppercase tracking-widest mb-1 ${i === 1 ? 'text-brand-amber' : 'text-brand-gold'}`}>
+              Niveau
+            </p>
+            <h3 class={`font-display text-xl font-bold mb-3 ${i === 1 ? 'text-white' : 'text-brand-blue'}`}>
+              {niveau}
+            </h3>
+            <p class={`text-sm leading-relaxed mb-4 ${i === 1 ? 'text-blue-200' : 'text-gray-500'}`}>
+              {desc}
+            </p>
+          </div>
+          <ul class="flex flex-col gap-1.5 mt-auto">
+            {exemples.map(ex => (
+              <li class={`flex items-center gap-2 text-sm ${i === 1 ? 'text-white/80' : 'text-gray-600'}`}>
+                <span class={`w-1.5 h-1.5 rounded-full shrink-0 ${i === 1 ? 'bg-brand-amber' : 'bg-brand-gold'}`}></span>
+                {ex}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Atouts -->
+    <div class="bg-brand-warm rounded-3xl p-8 md:p-10">
+      <h3 class="font-display text-2xl text-brand-blue font-bold text-center mb-8">Ce qui rend nos cours uniques</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+        {atouts.map(({ icon, txt }) => (
+          <div class="flex items-start gap-3">
+            <span class="text-xl shrink-0 mt-0.5">{icon}</span>
+            <p class="text-gray-700 text-sm leading-relaxed">{txt}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

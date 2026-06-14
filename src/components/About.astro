@@ -1,0 +1,62 @@
+---
+---
+<section id="association" class="py-24 px-6 bg-stone-50 relative overflow-hidden">
+  <!-- décor : points façon carte du monde -->
+  <div class="absolute inset-0 opacity-[0.035] pointer-events-none"
+       style="background-image: radial-gradient(circle, #1a3a5c 1.5px, transparent 1.5px); background-size: 28px 28px;">
+  </div>
+
+  <div class="relative max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Texte -->
+      <div>
+        <p class="text-brand-gold font-semibold uppercase tracking-widest text-xs mb-3">Qui sommes-nous</p>
+        <h2 class="font-display text-3xl md:text-4xl text-brand-blue font-bold mb-6 leading-tight">
+          Une association qui crée<br/>des <span class="italic text-brand-terra">passerelles</span> entre les cultures
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Depuis 1988, l'association Passerelles réunit bénévoles et apprenants autour d'un objectif commun :
+          favoriser l'apprentissage du français et l'insertion dans la vie locale pour toutes les personnes
+          étrangères installées en Alsace.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Afghans, Maghrébins, Ukrainiens, Sri Lankais, Béninois, Somaliens, Portugais… chaque semaine,
+          des hommes et des femmes venus des quatre coins du monde se retrouvent dans un esprit d'échange,
+          de respect et de bienveillance.
+        </p>
+
+        <div class="grid grid-cols-3 gap-4">
+          {[
+            { icon: '🌍', label: 'Tous niveaux', sub: "Du débutant à l'avancé" },
+            { icon: '🤝', label: '+20 bénévoles', sub: 'Passionnés et expérimentés' },
+            { icon: '📅', label: "Toute l'année", sub: 'De septembre à juillet' },
+          ].map(({ icon, label, sub }) => (
+            <div class="text-center">
+              <div class="text-3xl mb-2">{icon}</div>
+              <p class="font-semibold text-brand-blue text-sm">{label}</p>
+              <p class="text-gray-400 text-xs mt-0.5 leading-snug">{sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Citation mise en avant -->
+      <div class="relative">
+        <div class="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-brand-amber/10 blur-2xl pointer-events-none"></div>
+        <blockquote class="bg-brand-blue text-white rounded-3xl p-8 md:p-10 relative overflow-hidden">
+          <!-- guillemet décoratif -->
+          <span class="absolute top-4 right-6 font-display text-[8rem] leading-none text-white/5 select-none pointer-events-none">"</span>
+          <p class="font-display text-xl md:text-2xl italic leading-relaxed mb-6 relative">
+            « Nous avons tous les mêmes préoccupations. Apprendre le français devient bien plus qu'un simple cours : c'est une porte ouverte vers la confiance, l'autonomie et la rencontre. »
+          </p>
+          <footer class="flex items-center gap-3">
+            <div class="w-10 h-px bg-brand-amber flex-shrink-0"></div>
+            <p class="text-brand-amber text-sm font-medium">Freddy Loewenguth, Président</p>
+          </footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>

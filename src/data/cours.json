@@ -1,0 +1,30 @@
+{
+  "niveaux": [
+    {
+      "niveau":   "Débutants",
+      "emoji":    "🌱",
+      "desc":     "Vous ne parlez pas encore français ? On commence par les bases : se présenter, compter, comprendre les panneaux, faire ses courses.",
+      "exemples": ["Alphabet & phonétique", "Vocabulaire du quotidien", "Se présenter, saluer", "Chiffres & couleurs"]
+    },
+    {
+      "niveau":   "Intermédiaires",
+      "emoji":    "📖",
+      "desc":     "Vous comprenez mais hésitez encore ? On travaille la fluidité à l'oral, la grammaire et la vie pratique en France.",
+      "exemples": ["Conjugaison & grammaire", "Démarches administratives", "Santé, école, travail", "Compréhension écrite"]
+    },
+    {
+      "niveau":   "Avancés",
+      "emoji":    "🎓",
+      "desc":     "Vous parlez bien mais souhaitez progresser ? On affine, on nuance, on prépare des examens ou des entretiens.",
+      "exemples": ["Expression écrite", "Culture & histoire française", "Préparation DELF", "Débats & actualité"]
+    }
+  ],
+  "atouts": [
+    { "icon": "🤸", "txt": "Enseignement individualisé selon votre niveau" },
+    { "icon": "💬", "txt": "Priorité à l'oral et à la communication" },
+    { "icon": "📋", "txt": "Aide aux démarches du quotidien" },
+    { "icon": "🌐", "txt": "Échanges interculturels enrichissants" },
+    { "icon": "📅", "txt": "Commencez à tout moment de l'année" },
+    { "icon": "🆓", "txt": "100 % gratuit, sans inscription préalable" }
+  ]
+}

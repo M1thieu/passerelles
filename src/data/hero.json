@@ -1,0 +1,11 @@
+{
+  "hero_image": "/images/groupe.jpg",
+  "tagline": "Des cours de français gratuits, ouverts à tous, depuis 1988.",
+  "description": "Bénévoles et apprenants venus des quatre coins du monde se retrouvent chaque semaine en Alsace du Sud pour apprendre, échanger et créer des liens.",
+  "stats": [
+    { "value": "1988", "label": "Fondée en" },
+    { "value": "+20",  "label": "Bénévoles" },
+    { "value": "100%", "label": "Gratuit" },
+    { "value": "+100h","label": "Par an" }
+  ]
+}

@@ -1,4 +1,6 @@
 ---
+import data from '../data/press.json';
+const { articles } = data;
 ---
 <section id="presse" class="py-16 sm:py-24 px-5 sm:px-8 bg-brand-warm relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -11,47 +13,27 @@
     </div>
 
     <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
-
-      <a href="/images/article-dna.jpg" target="_blank" rel="noopener noreferrer"
-         class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-lg hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col">
-        <div class="relative overflow-hidden" style="padding-top: 52%;">
-          <img src="/images/article-dna.jpg"
-               alt="Article DNA avril 2024"
-               class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-          <span class="absolute top-3 left-3 text-white text-xs font-semibold bg-brand-blue px-2.5 py-1 rounded-full shadow">DNA · Avril 2024</span>
-        </div>
-        <div class="p-5 sm:p-6 flex-1 flex flex-col">
-          <h3 class="font-display font-bold text-brand-blue mb-2 text-base sm:text-lg leading-snug">
-            Des diplômes pour des élèves venus d'ailleurs
-          </h3>
-          <p class="text-gray-500 text-sm leading-relaxed flex-1">
-            Les apprenants à l'honneur pour leur persévérance dans l'apprentissage du français — Dernières Nouvelles d'Alsace.
-          </p>
-          <p class="text-brand-gold text-xs font-semibold mt-3 group-hover:underline">Voir l'article →</p>
-        </div>
-      </a>
-
-      <a href="/images/article-2026.jpg" target="_blank" rel="noopener noreferrer"
-         class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-lg hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col">
-        <div class="relative overflow-hidden" style="padding-top: 52%;">
-          <img src="/images/article-2026.jpg"
-               alt="Bulletin municipal Neuf-Brisach Info 2026"
-               class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-          <span class="absolute top-3 left-3 text-white text-xs font-semibold bg-brand-blue px-2.5 py-1 rounded-full shadow">Neuf-Brisach Info · 2026</span>
-        </div>
-        <div class="p-5 sm:p-6 flex-1 flex flex-col">
-          <h3 class="font-display font-bold text-brand-blue mb-2 text-base sm:text-lg leading-snug">
-            Passerelles dans le bulletin municipal
-          </h3>
-          <p class="text-gray-500 text-sm leading-relaxed flex-1">
-            Bénévoles, formatrices et apprenants à l'honneur dans le bulletin de Neuf-Brisach.
-          </p>
-          <p class="text-brand-gold text-xs font-semibold mt-3 group-hover:underline">Voir l'article →</p>
-        </div>
-      </a>
-
+      {articles.map((a) => (
+        <a href={a.image} target="_blank" rel="noopener noreferrer"
+           class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-lg hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col">
+          <div class="relative overflow-hidden" style="padding-top: 52%;">
+            <img src={a.image}
+                 alt={a.title}
+                 class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 text-white text-xs font-semibold bg-brand-blue px-2.5 py-1 rounded-full shadow">
+              {a.source} · {a.date}
+            </span>
+          </div>
+          <div class="p-5 sm:p-6 flex-1 flex flex-col">
+            <h3 class="font-display font-bold text-brand-blue mb-2 text-base sm:text-lg leading-snug">
+              {a.title}
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">{a.description}</p>
+            <p class="text-brand-gold text-xs font-semibold mt-3 group-hover:underline">Voir l'article →</p>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </section>

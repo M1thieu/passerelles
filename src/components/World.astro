@@ -1,22 +1,6 @@
 ---
-const origines = [
-  { flag: '🇦🇫', pays: 'Afghanistan' },
-  { flag: '🇺🇦', pays: 'Ukraine' },
-  { flag: '🇲🇦', pays: 'Maroc' },
-  { flag: '🇩🇿', pays: 'Algérie' },
-  { flag: '🇷🇺', pays: 'Russie' },
-  { flag: '🇸🇴', pays: 'Somalie' },
-  { flag: '🇱🇰', pays: 'Sri Lanka' },
-  { flag: '🇧🇯', pays: 'Bénin' },
-  { flag: '🇨🇮', pays: "Côte d'Ivoire" },
-  { flag: '🇵🇹', pays: 'Portugal' },
-  { flag: '🇬🇪', pays: 'Géorgie' },
-  { flag: '🇽🇰', pays: 'Kosovo' },
-  { flag: '🇦🇲', pays: 'Arménie' },
-  { flag: '🇹🇳', pays: 'Tunisie' },
-  { flag: '🇹🇷', pays: 'Turquie' },
-  { flag: '🇸🇾', pays: 'Syrie' },
-];
+import data from '../data/world.json';
+const { origines } = data;
 ---
 <section id="monde" class="py-16 sm:py-24 px-5 sm:px-8 bg-brand-blue relative overflow-hidden">
   <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">

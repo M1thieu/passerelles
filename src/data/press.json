@@ -1,0 +1,18 @@
+{
+  "articles": [
+    {
+      "source":      "DNA",
+      "date":        "Avril 2024",
+      "image":       "/images/article-dna.jpg",
+      "title":       "Des diplômes pour des élèves venus d'ailleurs",
+      "description": "Les apprenants à l'honneur pour leur persévérance dans l'apprentissage du français — Dernières Nouvelles d'Alsace."
+    },
+    {
+      "source":      "Neuf-Brisach Info",
+      "date":        "2026",
+      "image":       "/images/article-2026.jpg",
+      "title":       "Passerelles dans le bulletin municipal",
+      "description": "Bénévoles, formatrices et apprenants à l'honneur dans le bulletin de Neuf-Brisach."
+    }
+  ]
+}

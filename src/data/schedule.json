@@ -1,0 +1,10 @@
+{
+  "year_note": "Année 2025–2026 · Reprise le mardi 2 septembre 2025",
+  "sessions": [
+    { "emoji": "🌅", "label": "Mardi matin",      "time": "10h – 12h" },
+    { "emoji": "☀️", "label": "Jeudi après-midi", "time": "14h – 18h" }
+  ],
+  "address_name":   "Foyer protestant",
+  "address_street": "2 rue des Vosges, 68600 Neuf-Brisach",
+  "address_note":   "À côté du temple protestant"
+}

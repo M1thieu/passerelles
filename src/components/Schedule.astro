@@ -1,5 +1,7 @@
 ---
-const dest = encodeURIComponent('2 rue des Vosges, 68600 Neuf-Brisach, France');
+import data from '../data/schedule.json';
+const { year_note, sessions, address_name, address_street, address_note } = data;
+const dest = encodeURIComponent(address_street);
 const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
 ---
 <section id="horaires" class="py-16 sm:py-24 px-5 sm:px-8 bg-brand-warm">
@@ -8,15 +10,11 @@ const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
     <div class="text-center mb-10 sm:mb-12">
       <p class="text-brand-gold font-semibold uppercase tracking-widest text-xs mb-2">Programme</p>
       <h2 class="font-display text-3xl md:text-4xl text-brand-blue font-bold">Horaires & lieu</h2>
-      <p class="mt-2 text-gray-500 text-sm">Année 2025–2026 · Reprise le mardi 2 septembre 2025</p>
+      <p class="mt-2 text-gray-500 text-sm">{year_note}</p>
     </div>
 
-    <!-- Horaires -->
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-6 sm:mb-8">
-      {[
-        { emoji: '🌅', label: 'Mardi matin',      time: '10h – 12h' },
-        { emoji: '☀️', label: 'Jeudi après-midi', time: '14h – 18h' },
-      ].map(({ emoji, label, time }) => (
+      {sessions.map(({ emoji, label, time }) => (
         <div class="bg-white rounded-2xl flex items-center gap-4 sm:gap-5 px-5 sm:px-6 py-4 sm:py-5 shadow-sm border border-stone-200 hover:border-brand-gold hover:shadow-md transition-all">
           <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-blue flex items-center justify-center shrink-0 text-xl sm:text-2xl shadow-sm">
             {emoji}
@@ -30,7 +28,6 @@ const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
       ))}
     </div>
 
-    <!-- Map -->
     <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200">
       <a href={mapsUrl} target="_blank" rel="noopener noreferrer"
          class="group relative block w-full overflow-hidden"
@@ -57,9 +54,9 @@ const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
         <div class="flex items-start gap-3 flex-1">
           <span class="text-xl mt-0.5 shrink-0">📍</span>
           <div>
-            <p class="font-semibold text-brand-blue">Foyer protestant</p>
-            <p class="text-gray-600 text-sm">2 rue des Vosges, 68600 Neuf-Brisach</p>
-            <p class="text-gray-400 text-xs mt-0.5">À côté du temple protestant</p>
+            <p class="font-semibold text-brand-blue">{address_name}</p>
+            <p class="text-gray-600 text-sm">{address_street}</p>
+            <p class="text-gray-400 text-xs mt-0.5">{address_note}</p>
           </div>
         </div>
         <a href={mapsUrl} target="_blank" rel="noopener noreferrer"

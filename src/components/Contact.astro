@@ -1,8 +1,6 @@
 ---
-const contacts = [
-  { name: 'Freddy Loewenguth', role: 'Président',  phone: '07 66 03 14 38', tel: '+33766031438' },
-  { name: 'Dominique',         role: 'Bénévole',   phone: '06 07 81 23 43', tel: '+33607812343' },
-];
+import data from '../data/contacts.json';
+const { contacts } = data;
 ---
 <section id="contact" class="py-16 sm:py-24 px-5 sm:px-8 bg-stone-50 relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none"

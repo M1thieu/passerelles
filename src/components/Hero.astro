@@ -1,9 +1,11 @@
 ---
+import data from '../data/hero.json';
+const { hero_image, tagline, description, stats } = data;
 ---
 <section class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
   <div class="absolute inset-0">
     <img
-      src="/images/groupe.jpg"
+      src={hero_image}
       alt="Bénévoles et apprenants de l'association Passerelles"
       class="w-full h-full object-cover object-center"
     />
@@ -25,24 +27,19 @@
       </div>
 
       <p class="text-lg sm:text-2xl text-white font-display italic mb-3 fade-up delay-1 leading-snug">
-        Des cours de français <span class="text-brand-amber not-italic font-bold">gratuits</span>,<br/>
-        ouverts à tous, depuis 1988.
+        {tagline.split('gratuits').length > 1
+          ? <>{tagline.split('gratuits')[0]}<span class="text-brand-amber not-italic font-bold">gratuits</span>{tagline.split('gratuits')[1]}</>
+          : tagline}
       </p>
 
       <p class="text-white/70 text-sm leading-relaxed mb-7 sm:mb-8 max-w-lg fade-up delay-2">
-        Bénévoles et apprenants venus des quatre coins du monde se retrouvent
-        chaque semaine en Alsace du Sud pour apprendre, échanger et créer des liens.
+        {description}
       </p>
 
       <div class="flex flex-wrap gap-x-6 gap-y-3 mb-8 sm:mb-10">
-        {[
-          ['1988', 'Fondée en'],
-          ['+20', 'Bénévoles'],
-          ['100%', 'Gratuit'],
-          ['+100h', 'Par an'],
-        ].map(([val, label]) => (
+        {stats.map(({ value, label }) => (
           <div>
-            <p class="text-brand-amber font-display font-bold text-xl sm:text-2xl leading-none">{val}</p>
+            <p class="text-brand-amber font-display font-bold text-xl sm:text-2xl leading-none">{value}</p>
             <p class="text-white/50 text-xs mt-0.5">{label}</p>
           </div>
         ))}

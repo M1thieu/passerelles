@@ -1,0 +1,20 @@
+{
+  "origines": [
+    { "flag": "🇦🇫", "pays": "Afghanistan" },
+    { "flag": "🇺🇦", "pays": "Ukraine" },
+    { "flag": "🇲🇦", "pays": "Maroc" },
+    { "flag": "🇩🇿", "pays": "Algérie" },
+    { "flag": "🇷🇺", "pays": "Russie" },
+    { "flag": "🇸🇴", "pays": "Somalie" },
+    { "flag": "🇱🇰", "pays": "Sri Lanka" },
+    { "flag": "🇧🇯", "pays": "Bénin" },
+    { "flag": "🇨🇮", "pays": "Côte d'Ivoire" },
+    { "flag": "🇵🇹", "pays": "Portugal" },
+    { "flag": "🇬🇪", "pays": "Géorgie" },
+    { "flag": "🇽🇰", "pays": "Kosovo" },
+    { "flag": "🇦🇲", "pays": "Arménie" },
+    { "flag": "🇹🇳", "pays": "Tunisie" },
+    { "flag": "🇹🇷", "pays": "Turquie" },
+    { "flag": "🇸🇾", "pays": "Syrie" }
+  ]
+}

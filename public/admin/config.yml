@@ -1,0 +1,146 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: public/images
+public_folder: /images
+
+locale: fr
+
+collections:
+  - name: site
+    label: "Contenu du site"
+    files:
+
+      - name: hero
+        label: "🏠 Page d'accueil"
+        file: src/data/hero.json
+        fields:
+          - label: "Photo principale (groupe)"
+            name: hero_image
+            widget: image
+            hint: "Photo affichée en fond de la page d'accueil"
+          - label: "Accroche principale"
+            name: tagline
+            widget: string
+            hint: "Phrase courte sous le titre Passerelles"
+          - label: "Description"
+            name: description
+            widget: text
+            hint: "Texte sous l'accroche"
+          - label: "Statistiques"
+            name: stats
+            widget: list
+            hint: "Les 4 chiffres clés (1988, +20, 100%, +100h)"
+            fields:
+              - { label: "Valeur", name: value, widget: string }
+              - { label: "Label", name: label, widget: string }
+
+      - name: about
+        label: "ℹ️ À propos"
+        file: src/data/about.json
+        fields:
+          - label: "Paragraphe 1"
+            name: texte_1
+            widget: text
+          - label: "Paragraphe 2"
+            name: texte_2
+            widget: text
+          - label: "Citation du président"
+            name: citation
+            widget: text
+            hint: "Inclure les guillemets « »"
+          - label: "Auteur de la citation"
+            name: citation_auteur
+            widget: string
+
+      - name: cours
+        label: "📚 Les cours"
+        file: src/data/cours.json
+        fields:
+          - label: "Niveaux"
+            name: niveaux
+            widget: list
+            fields:
+              - { label: "Nom du niveau", name: niveau, widget: string }
+              - { label: "Emoji", name: emoji, widget: string, hint: "Ex: 🌱" }
+              - { label: "Description", name: desc, widget: text }
+              - label: "Exemples de contenu"
+                name: exemples
+                widget: list
+                field: { label: "Exemple", name: item, widget: string }
+          - label: "Atouts de l'association"
+            name: atouts
+            widget: list
+            fields:
+              - { label: "Emoji", name: icon, widget: string, hint: "Ex: 🤸" }
+              - { label: "Texte", name: txt, widget: string }
+
+      - name: schedule
+        label: "🕐 Horaires & Lieu"
+        file: src/data/schedule.json
+        fields:
+          - label: "Note de l'année"
+            name: year_note
+            widget: string
+            hint: "Ex: Année 2025–2026 · Reprise le mardi 2 septembre 2025"
+          - label: "Séances"
+            name: sessions
+            widget: list
+            fields:
+              - { label: "Emoji", name: emoji, widget: string, hint: "Ex: 🌅" }
+              - { label: "Intitulé", name: label, widget: string, hint: "Ex: Mardi matin" }
+              - { label: "Horaire", name: time, widget: string, hint: "Ex: 10h – 12h" }
+          - label: "Nom du lieu"
+            name: address_name
+            widget: string
+          - label: "Adresse complète"
+            name: address_street
+            widget: string
+          - label: "Note sur le lieu"
+            name: address_note
+            widget: string
+
+      - name: contacts
+        label: "📞 Contacts"
+        file: src/data/contacts.json
+        fields:
+          - label: "Personnes à contacter"
+            name: contacts
+            widget: list
+            hint: "Ajouter ou supprimer des contacts"
+            fields:
+              - { label: "Nom complet", name: name, widget: string }
+              - { label: "Rôle", name: role, widget: string, hint: "Ex: Président, Bénévole" }
+              - { label: "Téléphone (affiché)", name: phone, widget: string, hint: "Ex: 07 66 03 14 38" }
+              - label: "Téléphone (lien)"
+                name: tel
+                widget: string
+                hint: "Format international sans espaces. Ex: +33766031438"
+
+      - name: press
+        label: "📰 Presse"
+        file: src/data/press.json
+        fields:
+          - label: "Articles de presse"
+            name: articles
+            widget: list
+            hint: "Ajouter des coupures de presse ou bulletins"
+            fields:
+              - { label: "Source", name: source, widget: string, hint: "Ex: DNA, Neuf-Brisach Info" }
+              - { label: "Date", name: date, widget: string, hint: "Ex: Avril 2024" }
+              - { label: "Image de l'article", name: image, widget: image }
+              - { label: "Titre", name: title, widget: string }
+              - { label: "Description courte", name: description, widget: text }
+
+      - name: world
+        label: "🌍 Pays représentés"
+        file: src/data/world.json
+        fields:
+          - label: "Pays"
+            name: origines
+            widget: list
+            hint: "Ajouter ou supprimer des pays"
+            fields:
+              - { label: "Drapeau (emoji)", name: flag, widget: string, hint: "Ex: 🇫🇷" }
+              - { label: "Nom du pays", name: pays, widget: string }

@@ -1,4 +1,8 @@
 ---
+import data from '../data/schedule.json';
+const { sessions, address_name, address_street, address_note } = data;
+const dest = encodeURIComponent(address_street);
+const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
 ---
 <footer class="bg-brand-navy text-white py-14 px-6">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-start">
@@ -16,10 +20,11 @@
     <!-- Adresse -->
     <div class="text-sm text-white/50 md:text-center">
       <p class="text-white/70 font-medium mb-1">Nous retrouver</p>
-      <p>2 rue des Vosges · 68600 Neuf-Brisach</p>
-      <p class="mt-0.5">Foyer protestant (à côté du temple)</p>
+      <p>{address_name}</p>
+      <p class="mt-0.5">{address_street}</p>
+      <p class="mt-0.5">{address_note}</p>
       <a
-        href="https://www.google.com/maps/dir/?api=1&destination=2+rue+des+Vosges+68600+Neuf-Brisach"
+        href={mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block mt-2 text-brand-amber text-xs hover:underline"
@@ -31,8 +36,9 @@
     <!-- Horaires -->
     <div class="text-sm text-white/50 md:text-right">
       <p class="text-white/70 font-medium mb-1">Horaires</p>
-      <p>Mardi · 10h – 12h</p>
-      <p>Jeudi · 14h – 18h</p>
+      {sessions.map(({ label, time }) => (
+        <p>{label} · {time}</p>
+      ))}
       <p class="mt-2 text-white/30 text-xs">Septembre → Juillet · Entrée libre</p>
     </div>
 

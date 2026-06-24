@@ -12,14 +12,39 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 <Layout>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] bg-brand-amber text-brand-navy font-semibold text-sm px-4 py-2 rounded-full">
+    Aller au contenu
+  </a>
   <Nav />
-  <Hero />
-  <LogoBand />
-  <About />
-  <Cours />
-  <World />
-  <Schedule />
-  <Press />
-  <Contact />
+  <main id="main">
+    <Hero />
+    <LogoBand />
+    <About />
+    <Cours />
+    <World />
+    <Schedule />
+    <Press />
+    <Contact />
+  </main>
   <Footer />
+
+  <a href="#" aria-label="Retour en haut"
+     id="back-to-top"
+     class="fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-brand-blue text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all hover:bg-brand-navy">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+    </svg>
+  </a>
 </Layout>
+
+<script>
+  const btn = document.getElementById('back-to-top')!;
+  const update = () => {
+    const show = window.scrollY > 600;
+    btn.classList.toggle('opacity-0', !show);
+    btn.classList.toggle('pointer-events-none', !show);
+    btn.classList.toggle('translate-y-2', !show);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+</script>
